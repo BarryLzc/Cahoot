@@ -3,22 +3,29 @@ module github.com/cahoot
 go 1.22.4
 
 require (
-	github.com/bytedance/sonic v1.12.1 // indirect
-	github.com/bytedance/sonic/loader v0.2.0 // indirect
+	github.com/gin-gonic/gin v1.10.0
+	gorm.io/driver/mysql v1.99.0
+	gorm.io/gen v0.99.4
+	gorm.io/gorm v1.99.5
+	gorm.io/plugin/dbresolver v1.5.2
+)
+
+require (
+	github.com/bytedance/sonic v1.11.6 // indirect
+	github.com/bytedance/sonic/loader v0.1.1 // indirect
 	github.com/cloudwego/base64x v0.1.4 // indirect
 	github.com/cloudwego/iasm v0.2.0 // indirect
-	github.com/gabriel-vasile/mimetype v1.4.5 // indirect
+	github.com/gabriel-vasile/mimetype v1.4.3 // indirect
 	github.com/gin-contrib/sse v0.1.0 // indirect
-	github.com/gin-gonic/gin v1.10.0 // indirect
 	github.com/go-playground/locales v0.14.1 // indirect
 	github.com/go-playground/universal-translator v0.18.1 // indirect
-	github.com/go-playground/validator/v10 v10.22.0 // indirect
-	github.com/go-sql-driver/mysql v1.999.0-rc.2 // indirect
-	github.com/goccy/go-json v0.10.3 // indirect
+	github.com/go-playground/validator/v10 v10.20.0 // indirect
+	github.com/go-sql-driver/mysql v1.999.0 // indirect
+	github.com/goccy/go-json v0.10.2 // indirect
 	github.com/jinzhu/inflection v1.0.0 // indirect
 	github.com/jinzhu/now v1.1.5 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect
-	github.com/klauspost/cpuid/v2 v2.2.8 // indirect
+	github.com/klauspost/cpuid/v2 v2.2.7 // indirect
 	github.com/leodido/go-urn v1.4.0 // indirect
 	github.com/mattn/go-isatty v0.0.20 // indirect
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
@@ -26,16 +33,20 @@ require (
 	github.com/pelletier/go-toml/v2 v2.2.2 // indirect
 	github.com/twitchyliquid64/golang-asm v0.15.1 // indirect
 	github.com/ugorji/go/codec v1.2.12 // indirect
-	golang.org/x/arch v0.9.0 // indirect
+	golang.org/x/arch v0.8.0 // indirect
 	golang.org/x/crypto v0.26.0 // indirect
+	golang.org/x/mod v0.20.0 // indirect
 	golang.org/x/net v0.28.0 // indirect
-	golang.org/x/sys v0.24.0 // indirect
+	golang.org/x/sync v0.8.0 // indirect
+	golang.org/x/sys v0.23.0 // indirect
 	golang.org/x/text v0.17.0 // indirect
-	google.golang.org/protobuf v1.34.2 // indirect
+	golang.org/x/tools v0.24.0 // indirect
+	google.golang.org/protobuf v1.34.1 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
-	gopkg.inshopline.com/commons/logx v1.0.3 // indirect
+	gopkg.inshopline.com/commons/env v1.1.1 // indirect
+	gopkg.inshopline.com/commons/logx v1.0.4 // indirect
 	gopkg.inshopline.com/commons/sqlx v1.1.4 // indirect
 	gopkg.inshopline.com/commons/utils v1.2.2 // indirect
-	gorm.io/driver/mysql v1.99.0 // indirect
-	gorm.io/gorm v1.99.5 // indirect
+	gorm.io/datatypes v1.99.0 // indirect
+	gorm.io/hints v1.1.2 // indirect
 )
