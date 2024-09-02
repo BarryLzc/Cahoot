@@ -1,1 +1,2 @@
 # Cahoot
+Simple golang program
