@@ -43,6 +43,9 @@ require (
 	golang.org/x/tools v0.24.0 // indirect
 	google.golang.org/protobuf v1.34.1 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
+	gopkg.inshopline.com/commons/logx v1.0.3 // indirect
+	gopkg.inshopline.com/commons/sqlx v1.1.4 // indirect
+	gopkg.inshopline.com/commons/utils v1.2.0 // indirect
 	gorm.io/datatypes v1.99.0 // indirect
 	gorm.io/hints v1.1.2 // indirect
 )
