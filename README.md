@@ -1,3 +1,3 @@
 # Cahoot
 
-1. Cahoot is a free learning platform based game
+Cahoot is a simple Golang program, and free learning platform based game
