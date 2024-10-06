@@ -1,23 +1,18 @@
 package main
 
 import (
-	"github.com/gin-gonic/gin"
+	"fmt"
+	"github.com/english-learning/cmd"
+	"runtime/debug"
 )
 
 func main() {
-	//传统的Web服务写法
-	//http.HandleFunc("/hello", sayHello)
-	//err := http.ListenAndServe(":9090", nil)
-	//if err != nil {
-	//    fmt.Printf("http server faile,err:%v\n", err)
-	//    return
-	//}
-	//fmt.Println("项目启动成功")
+	defer func() {
+		if p := recover(); p != nil {
+			fmt.Printf("main error recover %s\n", p)
+			fmt.Printf("main error recover %s\n", string(debug.Stack()))
+		}
+	}()
 
-	//利用Gin框架的web写法，来源于gin官网
-	r := gin.Default()
-	r.POST("/api/auth/register", func(c *gin.Context) {
-	})
-	_ = r.Run() // listen and serve on 0.0.0.0:8080
-	panic(r.Run())
+	cmd.Run()
 }

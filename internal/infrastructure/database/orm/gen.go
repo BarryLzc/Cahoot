@@ -16,40 +16,39 @@ import (
 )
 
 var (
-	Q = new(Query)
-
-	Game *game
-	User *user
+	Q     = new(Query)
+	Game  *game
+	Users *users
 )
 
 func SetDefault(db *gorm.DB, opts ...gen.DOOption) {
 	*Q = *Use(db, opts...)
 	Game = &Q.Game
-	User = &Q.User
+	Users = &Q.Users
 }
 
 func Use(db *gorm.DB, opts ...gen.DOOption) *Query {
 	return &Query{
-		db:   db,
-		Game: newGame(db, opts...),
-		User: newUser(db, opts...),
+		db:    db,
+		Game:  newGame(db, opts...),
+		Users: newUsers(db, opts...),
 	}
 }
 
 type Query struct {
 	db *gorm.DB
 
-	Game game
-	User user
+	Game  game
+	Users users
 }
 
 func (q *Query) Available() bool { return q.db != nil }
 
 func (q *Query) clone(db *gorm.DB) *Query {
 	return &Query{
-		db:   db,
-		Game: q.Game.clone(db),
-		User: q.User.clone(db),
+		db:    db,
+		Game:  q.Game.clone(db),
+		Users: q.Users.clone(db),
 	}
 }
 
@@ -63,21 +62,21 @@ func (q *Query) WriteDB() *Query {
 
 func (q *Query) ReplaceDB(db *gorm.DB) *Query {
 	return &Query{
-		db:   db,
-		Game: q.Game.replaceDB(db),
-		User: q.User.replaceDB(db),
+		db:    db,
+		Game:  q.Game.replaceDB(db),
+		Users: q.Users.replaceDB(db),
 	}
 }
 
 type queryCtx struct {
-	Game IGameDo
-	User IUserDo
+	Game  IGameDo
+	Users IUsersDo
 }
 
 func (q *Query) WithContext(ctx context.Context) *queryCtx {
 	return &queryCtx{
-		Game: q.Game.WithContext(ctx),
-		User: q.User.WithContext(ctx),
+		Game:  q.Game.WithContext(ctx),
+		Users: q.Users.WithContext(ctx),
 	}
 }
 
@@ -86,14 +85,10 @@ func (q *Query) Transaction(fc func(tx *Query) error, opts ...*sql.TxOptions) er
 }
 
 func (q *Query) Begin(opts ...*sql.TxOptions) *QueryTx {
-	tx := q.db.Begin(opts...)
-	return &QueryTx{Query: q.clone(tx), Error: tx.Error}
+	return &QueryTx{q.clone(q.db.Begin(opts...))}
 }
 
-type QueryTx struct {
-	*Query
-	Error error
-}
+type QueryTx struct{ *Query }
 
 func (q *QueryTx) Commit() error {
 	return q.db.Commit().Error

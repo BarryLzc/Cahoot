@@ -1,14 +1,6 @@
-module github.com/cahoot
+module github.com/english-learning
 
 go 1.22.4
-
-require (
-	github.com/gin-gonic/gin v1.10.0
-	gorm.io/driver/mysql v1.99.0
-	gorm.io/gen v0.99.4
-	gorm.io/gorm v1.99.5
-	gorm.io/plugin/dbresolver v1.5.2
-)
 
 require (
 	github.com/bytedance/sonic v1.11.6 // indirect
@@ -17,10 +9,11 @@ require (
 	github.com/cloudwego/iasm v0.2.0 // indirect
 	github.com/gabriel-vasile/mimetype v1.4.3 // indirect
 	github.com/gin-contrib/sse v0.1.0 // indirect
+	github.com/gin-gonic/gin v1.10.0 // indirect
 	github.com/go-playground/locales v0.14.1 // indirect
 	github.com/go-playground/universal-translator v0.18.1 // indirect
 	github.com/go-playground/validator/v10 v10.20.0 // indirect
-	github.com/go-sql-driver/mysql v1.999.0 // indirect
+	github.com/go-sql-driver/mysql v1.7.0 // indirect
 	github.com/goccy/go-json v0.10.2 // indirect
 	github.com/jinzhu/inflection v1.0.0 // indirect
 	github.com/jinzhu/now v1.1.5 // indirect
@@ -34,18 +27,18 @@ require (
 	github.com/twitchyliquid64/golang-asm v0.15.1 // indirect
 	github.com/ugorji/go/codec v1.2.12 // indirect
 	golang.org/x/arch v0.8.0 // indirect
-	golang.org/x/crypto v0.26.0 // indirect
-	golang.org/x/mod v0.20.0 // indirect
-	golang.org/x/net v0.28.0 // indirect
-	golang.org/x/sync v0.8.0 // indirect
-	golang.org/x/sys v0.23.0 // indirect
-	golang.org/x/text v0.17.0 // indirect
-	golang.org/x/tools v0.24.0 // indirect
+	golang.org/x/crypto v0.23.0 // indirect
+	golang.org/x/mod v0.8.0 // indirect
+	golang.org/x/net v0.25.0 // indirect
+	golang.org/x/sys v0.20.0 // indirect
+	golang.org/x/text v0.15.0 // indirect
+	golang.org/x/tools v0.6.0 // indirect
 	google.golang.org/protobuf v1.34.1 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
-	gopkg.inshopline.com/commons/logx v1.0.3 // indirect
-	gopkg.inshopline.com/commons/sqlx v1.1.4 // indirect
-	gopkg.inshopline.com/commons/utils v1.2.0 // indirect
-	gorm.io/datatypes v1.99.0 // indirect
-	gorm.io/hints v1.1.2 // indirect
+	gorm.io/datatypes v1.0.7 // indirect
+	gorm.io/driver/mysql v1.5.1 // indirect
+	gorm.io/gen v0.3.21 // indirect
+	gorm.io/gorm v1.25.2 // indirect
+	gorm.io/hints v1.1.0 // indirect
+	gorm.io/plugin/dbresolver v1.3.0 // indirect
 )

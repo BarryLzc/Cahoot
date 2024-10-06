@@ -16,7 +16,7 @@ import (
 
 	"gorm.io/plugin/dbresolver"
 
-	"github.com/cahoot/internal/infrastructure/database/model"
+	"github.com/english-learning/internal/infrastructure/database/model"
 )
 
 func newGame(db *gorm.DB, opts ...gen.DOOption) game {
@@ -173,8 +173,6 @@ type IGameDo interface {
 	Assign(attrs ...field.AssignExpr) IGameDo
 	Joins(fields ...field.RelationField) IGameDo
 	Preload(fields ...field.RelationField) IGameDo
-	WriteRouteOnly() IGameDo
-	SetSqlKey(sqlKey string) IGameDo
 	FirstOrInit() (*model.Game, error)
 	FirstOrCreate() (*model.Game, error)
 	FindByPage(offset int, limit int) (result []*model.Game, count int64, err error)
@@ -363,14 +361,6 @@ func (g gameDo) Preload(fields ...field.RelationField) IGameDo {
 		g = *g.withDO(g.DO.Preload(_f))
 	}
 	return &g
-}
-
-func (g gameDo) WriteRouteOnly() IGameDo {
-	return g.withDO(g.DO.WriteRouteOnly())
-}
-
-func (g gameDo) SetSqlKey(sqlKey string) IGameDo {
-	return g.withDO(g.DO.SetSqlKey(sqlKey))
 }
 
 func (g gameDo) FirstOrInit() (*model.Game, error) {
